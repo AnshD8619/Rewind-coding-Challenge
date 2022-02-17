@@ -36,10 +36,10 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repository</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/AnshD8619/Rewind-coding-Challenge">Git Repository</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">About Me</a>
+                        <a class="nav-link" target="_blank" href="PortfolioLink">About Me</a>
                     </li>
                 </ul>
             </div>
@@ -53,14 +53,40 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            alert("ENTER PROGRAM CODE HERE");
+                            function getString(){
+                                document.getElementById("alert").classList.add("invisible");
+                                let userString = document.getElementById("userString").value;
+                                let rString = reverseString(userString);
+                                displayString(rString);
+                            }
+                            
+                            function reverseString(string){
+                                let rString = [];
+                                for(let index = string.length - 1; index >= 0; index--){
+                                    rString += string[index];
+                                }
+                                return rString;
+                            }
+                            
+                            function displayString(rString){
+                                document.getElementById("msg").innerHTML = `Your string reversed is: ${rString}`;
+                                document.getElementById("alert").classList.remove("invisible");
+                            }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>HOW IS THE CODE STRUCTURED</p>
-                    <h5>FUNCTION NAME</h5>
-                    <p>FUNCTION DESCRIPTION</p>
+                    <h5>Code Structure</h5>
+
+                    <h5>getString()</h5>
+                    <p>This function gets the string from the user input. Then it passes the input to reverseString() to get variable rString.</p>
+
+                    <h5>reverseString()</h5>
+                    <p>This function runs a for loop starting from the length of the string -1 to 0. 
+                    It adds these letters to an empty list rString and afterwards, returns rstring to getString()</p>
+
+                    <h5>displayString()</h5>
+                    <p>This function displays the reversed string in HTML and removes the invisible class from the location in HTML identified by "alert".</p>
                 </div>               
             </div>
         </div>
